@@ -33,7 +33,7 @@ class CalculatorViewController: UIViewController {
         updButtons()
         billTextField.endEditing(true)
         sender.isSelected = true
-        
+        // convert title from button to number
         let buttonTitle = sender.currentTitle!
         let titleFormating = String(buttonTitle.dropLast())
         let titleToNumber = Double(titleFormating)!

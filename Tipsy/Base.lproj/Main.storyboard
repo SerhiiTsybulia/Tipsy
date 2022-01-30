@@ -207,6 +207,7 @@
                         <outlet property="tenPctButton" destination="7y6-Kf-yF0" id="zdZ-0x-lIl"/>
                         <outlet property="twentyPctButton" destination="UtR-dU-EKt" id="gVu-Qf-cO3"/>
                         <outlet property="zeroPctButton" destination="XzR-0E-Xf7" id="OpQ-GP-ueF"/>
+                        <segue destination="Dnf-m2-FPm" kind="presentation" id="fbC-6w-maT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -218,7 +219,7 @@
             <objects>
                 <viewController id="Dnf-m2-FPm" customClass="ResultsViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DNW-gk-FsX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCe-Te-efL">
@@ -255,7 +256,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzn-9K-6hu">
-                                <rect key="frame" x="107" y="788" width="200" height="54"/>
+                                <rect key="frame" x="107" y="734" width="200" height="54"/>
                                 <color key="backgroundColor" red="0.73029093840000003" green="0.9270325049" blue="0.77968612979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="0Lh-eY-3GO"/>
