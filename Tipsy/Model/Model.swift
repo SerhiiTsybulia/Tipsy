@@ -23,10 +23,15 @@ struct Model {
         guard let convBill = Double(billWithDot) else { return 0.0 }
         return convBill
     }
-    func getResult(billTotal: Double, numberOfPeople: Int, tip: Double)->String{
-        let result = billTotal * (1 + tip) / Double(numberOfPeople)
-        let formatingResult = String(format: "%.2f", result)
+    func resultBill(convBill: Double, numberOfPeople: Int, tip: Double)->Double{
+        let result = convBill * (1 + tip) / Double(numberOfPeople)
+        return result
+    }
+    func getBillResult(result: Double)->String{
+        let resultValue = result
+        let formatingResult = String(format: "%.2f", resultValue)
         return formatingResult
+        
     }
     func getNumberOfPeople(_ numberOfPeople: Int)->String{
         let strNOP = String(numberOfPeople)

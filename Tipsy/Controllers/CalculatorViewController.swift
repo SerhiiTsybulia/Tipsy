@@ -54,10 +54,8 @@ class CalculatorViewController: UIViewController {
         
         let bill = billTextField.text!
         let convBill = model.convBill(bill)
-        
         if bill != ""{
-            billTotal = convBill
-            let billResult = model.getResult(billTotal: billTotal, numberOfPeople: numberOfPeople, tip: tip)
+            billTotal = model.resultBill(convBill: convBill, numberOfPeople: numberOfPeople, tip: tip)
             self.performSegue(withIdentifier: "goToResult", sender: self)
             
         }
@@ -65,7 +63,7 @@ class CalculatorViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResult"{
             let destinationVC = segue.destination as! ResultsViewController
-            destinationVC.result = model.getResult(billTotal: billTotal, numberOfPeople: numberOfPeople, tip: tip)
+            destinationVC.result = model.getBillResult(result: billTotal)
             destinationVC.tip = model.getTipTitle(buttonTitle)
             destinationVC.numberOfPeople = model.getNumberOfPeople(numberOfPeople)
         }
