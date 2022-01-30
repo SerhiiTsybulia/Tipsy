@@ -207,7 +207,7 @@
                         <outlet property="tenPctButton" destination="7y6-Kf-yF0" id="zdZ-0x-lIl"/>
                         <outlet property="twentyPctButton" destination="UtR-dU-EKt" id="gVu-Qf-cO3"/>
                         <outlet property="zeroPctButton" destination="XzR-0E-Xf7" id="OpQ-GP-ueF"/>
-                        <segue destination="Dnf-m2-FPm" kind="presentation" id="fbC-6w-maT"/>
+                        <segue destination="Dnf-m2-FPm" kind="presentation" identifier="goToResult" id="fbC-6w-maT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0405F3CC27A0A6C3004B0DDC /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405F3CB27A0A6C3004B0DDC /* ResultsViewController.swift */; };
+		0462A0D927A7292100FCACE4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462A0D827A7292100FCACE4 /* Model.swift */; };
 		ADB689532326708D006D4E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB689522326708D006D4E2B /* AppDelegate.swift */; };
 		ADB689552326708D006D4E2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB689542326708D006D4E2B /* SceneDelegate.swift */; };
 		ADB689572326708D006D4E2B /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB689562326708D006D4E2B /* CalculatorViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		0405F3CB27A0A6C3004B0DDC /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		0462A0D827A7292100FCACE4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		ADB6894F2326708D006D4E2B /* Tipsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB689522326708D006D4E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADB689542326708D006D4E2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,9 +45,24 @@
 			isa = PBXGroup;
 			children = (
 				ADB689562326708D006D4E2B /* CalculatorViewController.swift */,
-				0405F3CB27A0A6C3004B0DDC /* ResultsViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0462A0D127A724C500FCACE4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0405F3CB27A0A6C3004B0DDC /* ResultsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0462A0D727A7290F00FCACE4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0462A0D827A7292100FCACE4 /* Model.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		ADB689462326708D006D4E2B = {
@@ -67,8 +84,10 @@
 		ADB689512326708D006D4E2B /* Tipsy */ = {
 			isa = PBXGroup;
 			children = (
+				0462A0D727A7290F00FCACE4 /* Model */,
 				ADB689522326708D006D4E2B /* AppDelegate.swift */,
 				ADB689542326708D006D4E2B /* SceneDelegate.swift */,
+				0462A0D127A724C500FCACE4 /* View */,
 				0405F3CE27A0A745004B0DDC /* Controllers */,
 				ADB689582326708D006D4E2B /* Main.storyboard */,
 				ADB6895B2326708E006D4E2B /* Assets.xcassets */,
@@ -149,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0462A0D927A7292100FCACE4 /* Model.swift in Sources */,
 				ADB689572326708D006D4E2B /* CalculatorViewController.swift in Sources */,
 				ADB689532326708D006D4E2B /* AppDelegate.swift in Sources */,
 				ADB689552326708D006D4E2B /* SceneDelegate.swift in Sources */,

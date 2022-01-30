@@ -8,7 +8,15 @@
 
 import UIKit
 
+    
+
 class CalculatorViewController: UIViewController {
+    
+    var model = Model()
+    var tip = 0.1
+    var numberOfPeople = 2
+    var billTotal = 0.0
+    var buttonTitle = ""
     
     @IBOutlet weak var billTextField: UITextField!{
         didSet {
@@ -24,21 +32,12 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var twentyPctButton: UIButton!
     @IBOutlet weak var splitNumberLabel: UILabel!
     
-    var tip = 0.1
-    var numberOfPeople = 2
-    var billTotal = 0.0
-    
-    
     @IBAction func tipChanged(_ sender: UIButton) {
         updButtons()
         billTextField.endEditing(true)
         sender.isSelected = true
-        // convert title from button to number
-        let buttonTitle = sender.currentTitle!
-        let titleFormating = String(buttonTitle.dropLast())
-        let titleToNumber = Double(titleFormating)!
-        tip = titleToNumber / 100
-        
+        buttonTitle = sender.currentTitle!
+        tip = model.convertTip(button: buttonTitle)
     }
     func updButtons(){
         zeroPctButton.isSelected = false
@@ -54,15 +53,21 @@ class CalculatorViewController: UIViewController {
     @IBAction func calculatePressed(_ sender: UIButton) {
         
         let bill = billTextField.text!
-        // replacement comma to dot from decimalpad
-        let convBill = bill.replacingOccurrences(of: ",", with: ".")
+        let convBill = model.convBill(bill)
         
         if bill != ""{
-            billTotal = Double(convBill)!
-            let result = billTotal * (1 + tip) / Double(numberOfPeople)
-            print(result)
-            let formatingResult = String(format: "%.2f", result)
-            print(formatingResult)
+            billTotal = convBill
+            let billResult = model.getResult(billTotal: billTotal, numberOfPeople: numberOfPeople, tip: tip)
+            self.performSegue(withIdentifier: "goToResult", sender: self)
+            
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult"{
+            let destinationVC = segue.destination as! ResultsViewController
+            destinationVC.result = model.getResult(billTotal: billTotal, numberOfPeople: numberOfPeople, tip: tip)
+            destinationVC.tip = model.getTipTitle(buttonTitle)
+            destinationVC.numberOfPeople = model.getNumberOfPeople(numberOfPeople)
         }
     }
 }
